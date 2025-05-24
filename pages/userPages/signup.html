@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css" />
+    <title>SMS-SignUp</title>
+</head>
+<body>  
+     <button class="back-btn" onclick="window.history.back()">
+      <img src="../../assets/blue-back.png" alt="blue-back.png">      
+    </button>
+
+    <div class="auth-container">
+    <h1>Signup</h1>
+    <form action="">
+        <input type="text" id="fullName" placeholder="Name" required>
+        <input type="text" id="email" placeholder="Email" required>
+        <input type="text" id="password" placeholder="Password" required>
+        <input type="text" id="organizationName" placeholder="Organization Name" required>
+        <label for="categoryForm">Select organization category</label>
+        <div>
+            <select name="category" id="categoryForm" required>
+            <option value="school">School</option>
+            <option value="college">College</option>
+            <option value="coaching">Pvt.Coaching</option>   
+            </select>
+        </div>
+        <button type="submit">Create Account</button>
+    </form>
+    </div>
+</body>
+<script type="module" src="../../js/userFiles/signup.js"></script>
+</html>

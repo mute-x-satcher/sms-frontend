@@ -1,0 +1,335 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 1rem;
+}  
+
+/* Full-page overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Spinner */
+.loading-spinner {
+  border: 6px solid #e0e0e0; /* light gray */
+  border-top: 6px solid #007bff; /* blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Message Text */
+.loading-message {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 5px;
+  }
+
+  .loading-message {
+    font-size: 1rem;
+  }
+}
+
+.auth-container {
+/* Container */
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 98, 255, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+}  
+
+.auth-container h1 {
+  color: #0057d8;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}  
+
+ h1 {
+  color: #0057d8; 
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}  
+
+/* Input Styles */
+form input {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.7rem 0;
+  border: 1px solid #a7abaf;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}  
+
+form input:focus {
+  border-color: #0057d8;
+  outline: none;
+}  
+ /* msgCard-Style  */
+.message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 95%;       /* Max width 90% of viewport width */
+  min-width: 200px;     /* Minimum width for better readability */
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 5px solid;
+  color: white;
+  background-color: #0057d8;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  opacity: 0.9;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+  word-wrap: break-word; /* Break long words if needed */
+  text-align: center;    /* Center text */
+}  
+
+.message.alert {
+  border-color: #f39c12;
+}  
+
+.message.success {
+  border-color: #27ae60;
+}  
+
+.message.error {
+  border-color: #c0392b;
+}  
+
+/* Optional: smaller font on very small screens */
+@media (max-width: 400px) {
+  .message {
+    font-size: 12px;
+    padding: 10px 15px;
+  }  
+}  
+
+/*Back button in classupdatepage*/
+.back-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: white;
+  color: #0057d8;
+  border: 2px solid #0057d8;
+  padding: 0.1rem 0.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}  
+
+.back-btn:hover {
+  background-color: #e6f0ff;
+}  
+
+
+
+/* Button Styles */
+form button {
+  width: 100%;
+  background-color: #0057d8;
+  color: #ffffff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #0041aa;
+}
+
+/* Links */
+.auth-container p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.auth-container a {
+  color: #0057d8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.auth-container a:hover {
+  color: #003c94;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 2rem;
+  }
+
+  .auth-container h2 {
+    font-size: 1.6rem;
+  }
+
+  form input,
+  form button {
+    font-size: 0.95rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1.5rem;
+  }
+
+  .auth-container h2 {
+    font-size: 1.4rem;
+  }
+
+  form input,
+  form button {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .auth-container p {
+    font-size: 0.9rem;
+  }
+}
+
+form label {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #003c94;
+  font-size: 0.95rem;
+}
+
+/* Select Dropdown Style */
+form select {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.7rem 0;
+  border: 1px solid #a7abaf;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  transition: border 0.3s;
+}
+
+form select:focus {
+  border-color: #0057d8;
+  outline: none;
+  background-color: #f0f6ff;
+}
+
+form #email_info{
+  color: #0057d8;
+}
+
+/* Ensure <div> around select doesn't break layout */
+form div {
+  width: 100%;
+}
+
+/* Verification Code Container */
+.code-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.code-inputs input.code {
+  width: 3rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 2px solid #a7abaf;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.code-inputs input.code:focus {
+  border-color: #0057d8;
+  outline: none;
+  background-color: #f0f6ff;
+}
+
+@media (max-width: 480px) {
+  .code-inputs {
+    gap: 0.5rem;
+  }
+
+  .code-inputs input.code {
+    width: 2.5rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+w-btn{
+  background-color: #f0f6ff;
+  padding: 0.1rem 0.2rem;
+}
+
+b-btn{
+  background-color: #0057d8;
+  padding: 0.1rem 0.2rem;
+}

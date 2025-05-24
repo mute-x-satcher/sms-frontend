@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Navbar */
+nav {
+  background-color: #0057d8; /* Blue */
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Class Name */
+nav h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  max-width: 45vw;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+nav h1 span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Apply scrolling only when needed */
+@media (max-width: 600px) {
+  nav h1.scroll span {
+    animation: marquee 10s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+}
+/* Nav Buttons */
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-buttons span {
+  /* background-color: white; */
+  color: #0057d8;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+/* Page container to center content vertically */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical center */
+  align-items: center;
+  gap: 20px;
+}
+
+
+/* Full-page overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dark transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Spinner */
+.loading-spinner {
+  border: 6px solid #e0e0e0; /* light gray */
+  border-top: 6px solid #007bff; /* blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Message Text */
+.loading-message {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 5px;
+  }
+
+  .loading-message {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* Large Buttons */
+.large-btn {
+  width: 95%;
+  height: 20vh;
+  background-color: white;
+  border: 2px solid #0057d8;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #0057d8;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.large-btn:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .large-btn {
+    height: 18vh;
+    font-size: 1rem;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  .nav-buttons span {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+w-btn{
+  background-color: #f0f6ff;
+  padding: 0.1rem 0.2rem;
+}
+
+b-btn{
+  background-color: #0057d8;
+  padding: 0.1rem 0.2rem;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>SMS-Update Student</title>
+</head>
+<body>
+     <button class="back-btn" onclick="window.history.back()">
+      <img src="../../assets/blue-back.png" alt="blue-back.png">  
+     </button>
+    <div class="auth-container">
+    <h1>Let's Update Student</h1>
+        <form action="">
+        <input type="text" id="studentName" placeholder="Student Name" required>
+        <input type="text" id="rollNumber"  placeholder="Roll Number" required>
+        <input type="text" id="pri-contact" placeholder="Primary Parent Contact" >
+        <label for="sec-contact">(Optional)</label>
+        <input type="text" id="sec-contact" placeholder="Secondary Parent Contact" >    
+        <button type="submit">Update Student</button>
+    </form>
+</div>
+</body>
+<script type="module" src="../../js/studentFiles/studentUpdatePage.js"></script>
+</html>

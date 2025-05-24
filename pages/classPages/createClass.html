@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/style.css">
+    <title>SMS-Create Class</title>
+</head>
+<body>
+     <button class="back-btn" onclick="window.history.back()">
+        <img src="../../assets/blue-back.png" alt="blue-back.png">
+     </button>
+    <div class="auth-container">
+    <h1>Let's Create Class</h1>
+        <form action="">
+            <input  type="text" placeholder="Class Name" id="className" required>
+            <input  type="text" placeholder="Whatsapp Group Name" id="groupName" required>
+            <label for="standard">Select Standard of Class</label>
+            <div>
+            <select  id="standard">
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+            </select>
+        </div>
+        <button type="submit">Create Class</button>
+    </form>
+</div>
+</body>
+<script type="module" src="../../js/classFiles/createClass.js"></script>
+</html>
