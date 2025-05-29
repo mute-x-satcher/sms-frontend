@@ -8,16 +8,34 @@ const appendStudents = (allStudents) => {
 const studentContainer = document.querySelector('.student-container')
 
 
-
 allStudents.map((student) => {
 const mainCard = document.createElement('div')
 mainCard.id = student.rollNumber
 mainCard.dataset.name = student.studentName
 mainCard.className = 'student-card'
 
+const menuContainer = document.createElement('span')
+menuContainer.className = 'menu-container'
 
-const actionsDiv = document.createElement('div')
-actionsDiv.className = 'card-actions'
+const menuButton = document.createElement('img')
+menuButton.className = 'menu-button'
+menuButton.src = '../../assets/three-dots.png'
+
+const menuDropDown = document.createElement('span')
+menuDropDown.id = 'menuDropdown'
+menuDropDown.className = 'menu-dropdown hidden'
+
+// const actionsDiv = document.createElement('div')
+// actionsDiv.className = 'card-actions'
+
+menuButton.addEventListener('click',(e)=>{
+    e.stopPropagation()
+    menuDropDown.classList.toggle('hidden')
+})
+
+document.addEventListener('click',()=>{
+    menuDropDown.classList.add('hidden')
+})
 
 const updateBtn = document.createElement('button')
 updateBtn.textContent = 'Update'
@@ -34,7 +52,6 @@ updateBtn.addEventListener('click',(event) => {
 const deleteBtn = document.createElement('button')
 deleteBtn.textContent = 'Delete'
 deleteBtn.id = student._id
-deleteBtn.style.backgroundColor = 'red'
 deleteBtn.addEventListener('click', (event) => {
   event.stopPropagation()
   const deleteFunc = () => {
@@ -65,11 +82,14 @@ deleteAsk(deleteFunc,'student')
 
 })
 
-actionsDiv.appendChild(updateBtn)
-actionsDiv.appendChild(deleteBtn)
+menuDropDown.appendChild(updateBtn)
+menuDropDown.appendChild(deleteBtn)
 
 
-mainCard.appendChild(actionsDiv)
+menuContainer.appendChild(menuButton)
+menuContainer.appendChild(menuDropDown)
+
+mainCard.appendChild(menuContainer)
 
 const nameDiv = document.createElement('div')
 const rollDiv = document.createElement('div')

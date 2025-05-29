@@ -36,7 +36,7 @@ signupForm.addEventListener("submit", (event) => {
         .then(async (res) => {
             setLoading(false)
             const data = await res.json()
-            console.log(data) // TEMP
+            console.log(data) 
 
             const { userInfo } = data
             if (userInfo) {
@@ -49,7 +49,7 @@ signupForm.addEventListener("submit", (event) => {
                 await showMessage(data.msg, "success")
                 window.location.href = 'verify.html'
             } else {
-                console.log(data.msg) // MSG-TEMP
+                console.log(data.msg) 
                 showMessage(data.msg, 'error')
             }
         })
