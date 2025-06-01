@@ -14,7 +14,75 @@ body {
   margin: 0;
 }
 
+form button {
+  width: 100%;
+  background-color: #0057d8;
+  color: #ffffff;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
+.menu-container {
+  position: relative;
+  /* background-color: #003580; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: #0057d8;
+  background-color: #f0f4ff;
+}
+
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  color: #0057d8;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+}
+
+.menu-dropdown button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #0057d8;
+  font-family:  sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.menu-dropdown button:hover {
+  background-color: #f0f4ff;
+}
+
+/* Hidden class for toggling visibility */
+.hidden {
+  display: none;
+}
 
 #searchInput {
   width: 100%;
@@ -220,19 +288,6 @@ nav {
   color: #e0e7ff;
   cursor: pointer;
 }
-
-#view-pdf{
-  background-color: #0057d8;
-}
-
-#update-btn{
-  background-color: #24b862;
-}
-
-#delete-btn{
-  background-color: #c0392b;
-}
-
 /* Back button inside nav */
 .back-btn {
   position: absolute;
@@ -381,20 +436,6 @@ form label {
 form input:focus {
   border-color: #0057d8;
   outline: none;
-}
-
-form button {
-  width: 100%;
-  background-color: #0057d8;
-  color: #ffffff;
-  padding: 0.9rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .submit-btn:hover {

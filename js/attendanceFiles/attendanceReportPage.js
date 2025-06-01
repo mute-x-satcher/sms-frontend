@@ -10,47 +10,25 @@ reloadOnce()
 const studentHolder = document.querySelector('#studentHolder') 
 const dateBar = document.querySelector('#date')
 const backBtn = document.querySelector('button')
-const pdfBtn = document.querySelector('#view-pdf')
-const updateBtn = document.querySelector('#update-btn')
-const deleteBtn = document.querySelector('#delete-btn')
+const settingIcon = document.querySelector('#setting-icon')
+const updateBtn = document.createElement('button')
+const deleteBtn = document.createElement('button')
 const searchInput = document.querySelector('#searchInput')
 
+updateBtn.innerText = 'Update'
+deleteBtn.innerText = 'Delete'
 
-backBtn.addEventListener('click',(e) => {
-    window.location.href = 'attendancePage.html'
-})
+const menuContainer = document.createElement('span')
+menuContainer.className = 'menu-container'
 
-const reportData = JSON.parse(localStorage.getItem('currentAttendanceReport'))
-const studetnsAttendace = reportData.attendance
-const pdfURL = reportData.pdfURL
-const date = reportData.reportDate
-const url = pdfURL; // Replace this with your actual PDF file path
+const menuButton = document.createElement('img')
+menuButton.className = 'menu-button'
+menuButton.src = '../../assets/menu.png'
 
-studetnsAttendace.map((student) => {
+const menuDropDown = document.createElement('span')
+menuDropDown.id = 'menuDropdown'
+menuDropDown.className = 'menu-dropdown hidden'
 
-    const studentCard = document.createElement('div')
-    const studentName = document.createElement('div')
-    const studentRollNumber = document.createElement('div')
-    const studentStatus = document.createElement('div')
-    studentName.textContent = `${student.studentName}`
-    studentStatus.textContent = `Status: ${student.status}`
-    studentRollNumber.textContent = `Roll No: ${student.rollNumber}`
-    studentCard.className = 'student-card'
-    studentCard.id = student.rollNumber
-    studentCard.dataset.name = student.studentName
-    studentCard.appendChild(studentName)
-    studentCard.appendChild(studentRollNumber)
-    studentCard.appendChild(studentStatus)
-   
-    if(student.status == 'present'){
-        studentCard.classList.add('present-student')
-    }else{
-        studentCard.classList.add('absent-student')
-    }
-    
-    pdfBtn.addEventListener('click',(e) => {
-        window.location.href = url
-    })
 
     updateBtn.addEventListener('click',(e) => {
         window.location.href = 'attendanceUpdatePage.html'
@@ -85,11 +63,61 @@ studetnsAttendace.map((student) => {
         deleteAsk(deleteFunc,'Attendacne Report')
     })
 
-    dateBar.innerText = date
-    studentHolder.appendChild(studentCard)
+    menuDropDown.appendChild(updateBtn)
+    menuDropDown.appendChild(deleteBtn)
 
+    
 
+backBtn.addEventListener('click',(e) => {
+    window.location.href = 'attendancePage.html'
 })
+
+const reportData = JSON.parse(localStorage.getItem('currentAttendanceReport'))
+const studetnsAttendace = reportData.attendance
+const pdfURL = reportData.pdfURL
+const date = reportData.reportDate
+const url = pdfURL; // Replace this with your actual PDF file path
+
+    menuButton.addEventListener('click',(e)=>{
+    e.stopPropagation()
+    menuDropDown.classList.toggle('hidden')
+})
+
+document.addEventListener('click',()=>{
+    menuDropDown.classList.add('hidden')
+})
+
+    dateBar.innerText = date
+    menuContainer.appendChild(menuButton)
+    menuContainer.appendChild(menuDropDown)
+    settingIcon.appendChild(menuContainer)
+
+
+studetnsAttendace.map((student) => {
+
+    const studentCard = document.createElement('div')
+    const studentName = document.createElement('div')
+    const studentRollNumber = document.createElement('div')
+    const studentStatus = document.createElement('div')
+    studentName.textContent = `${student.studentName}`
+    studentStatus.textContent = `Status: ${student.status}`
+    studentRollNumber.textContent = `Roll No: ${student.rollNumber}`
+    studentCard.className = 'student-card'
+    studentCard.id = student.rollNumber
+    studentCard.dataset.name = student.studentName
+    studentCard.appendChild(studentName)
+    studentCard.appendChild(studentRollNumber)
+    studentCard.appendChild(studentStatus)
+   
+    if(student.status == 'present'){
+        studentCard.classList.add('present-student')
+    }else{
+        studentCard.classList.add('absent-student')
+    }
+
+    studentHolder.appendChild(studentCard)
+})
+
 
 const AllStudentCards = document.querySelectorAll('.student-card')
 searchInput.addEventListener('input',(e) => {

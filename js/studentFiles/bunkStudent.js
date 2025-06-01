@@ -7,6 +7,7 @@ import reloadOnce from "../../components/reloadOnce.js";
 reloadOnce()
 
 const bunkForm = document.querySelector('form')
+const lecture = document.querySelector('#lectureName')
 const currentStudents = JSON.parse(localStorage.getItem('currentStudentsArray'))
 
 appendBunk(currentStudents)
@@ -36,8 +37,10 @@ bunkForm.addEventListener('submit',(e)=>{
 
     const classData = JSON.parse(localStorage.getItem('currentClass'))
     const groupId = classData.groupId
-    const query = {bunkList,groupId}
+    const lectureName = lecture.value
+    const query = {bunkList,groupId,lectureName}
     const url = `${BASE_URL}/student/bunk`
+    console.log(query)
     setLoading(true,'Submiting Bunk Report')
     const bunkReport = fetch(url,{
         method: 'POST',

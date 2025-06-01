@@ -15,6 +15,23 @@ body {
 }
 
 
+form select {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 0.7rem 0;
+  border: 1px solid #a7abaf;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: white;
+  transition: border 0.3s;
+}
+
+form select:focus {
+  border-color: #0057d8;
+  outline: none;
+  background-color: #f0f6ff;
+}
+
 
 #searchInput {
   width: 100%;
