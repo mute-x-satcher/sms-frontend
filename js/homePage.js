@@ -44,8 +44,45 @@ fetchClasses()
 
 
 const createBtn = document.querySelector('#createClass')
+const settingIcon = document.querySelector('#setting-icon')
+const logoutBtn = document.createElement('button')
+logoutBtn.innerText = 'Logout'
+
+const menuContainer = document.createElement('span')
+menuContainer.className = 'menu-container'
+
+const menuButton = document.createElement('img')
+menuButton.className = 'menu-button'
+menuButton.src = '../assets/menu.png'
+
+const menuDropDown = document.createElement('span')
+menuDropDown.id = 'menuDropdown'
+menuDropDown.className = 'menu-dropdown hidden'
+
+logoutBtn.addEventListener('click',(e) => {
+    localStorage.removeItem('authToken')
+    window.location.href = '../index.html'
+}) 
+
+
+menuDropDown.appendChild(logoutBtn)
+
+ menuButton.addEventListener('click',(e)=>{
+    e.stopPropagation()
+    menuDropDown.classList.toggle('hidden')
+})
+
+document.addEventListener('click',()=>{
+    menuDropDown.classList.add('hidden')
+})
+
+    menuContainer.appendChild(menuButton)
+    menuContainer.appendChild(menuDropDown)
+    settingIcon.appendChild(menuContainer)
+
 
 createBtn.addEventListener('click',(event)=>{
     window.location.href = './classPages/createClass.html'
 })
+
 
