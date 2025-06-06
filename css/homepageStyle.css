@@ -111,11 +111,11 @@ nav h1 {
   white-space: nowrap;
 }
 
-.nav-buttons a:hover,
+/* .nav-buttons a:hover,
 .nav-buttons span:hover {
   background-color: #0057d8;
   color: white;
-}
+} */
 
 /* === Responsive Navbar Improvements === */
 @media (max-width: 600px) {
@@ -247,15 +247,12 @@ b-btn{
   top: 30px;
   color: #0057d8;
   background-color: white;
-  /* border: 1px solid #ccc; */
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 120px;
   z-index: 100;
   display: flex;
   flex-direction: column;
-  /* padding: 0 0; */
-  /* border: 1px solid #0057d8; */
 }
 
 .menu-dropdown button {
@@ -272,11 +269,6 @@ b-btn{
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
-
-.menu-dropdown button:hover {
-  background-color: #f0f4ff;
-}
-
 
 /* Hidden class for toggling visibility */
 .hidden {
