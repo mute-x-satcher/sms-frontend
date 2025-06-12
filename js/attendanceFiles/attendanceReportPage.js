@@ -57,7 +57,9 @@ menuDropDown.className = 'menu-dropdown hidden'
                 console.log("HI deleted")
                 window.location.href = 'attendancePage.html'
             })
-            .catch((err) => console.log(`attendanceReportPage.js Error: ${err}`))
+            .catch((err) =>{ 
+                showMessage(data.msg,'error')
+                console.log(`attendanceReportPage.js Error: ${err}`)})
         }
 
         deleteAsk(deleteFunc,'Attendacne Report')

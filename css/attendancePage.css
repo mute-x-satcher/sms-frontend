@@ -103,7 +103,7 @@ transform: translateX(-50%);
 }
 
 .back-btn:hover {
-  background-color: #0057d8;
+  background-color: #ffffff;
   color: white;
 }
 
@@ -132,7 +132,7 @@ transform: translateX(-50%);
 
 .nav-buttons a:hover,
 .nav-buttons span:hover {
-  background-color: #0057d8;
+  background-color: #fdfdfd;
   color: white;
 }
 

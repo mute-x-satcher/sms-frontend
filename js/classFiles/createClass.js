@@ -34,7 +34,7 @@ createClassForm.addEventListener('submit',(event) => {
                 showMessage(data.msg,'success')
                 window.location.href = '../homePage.html'
             }else{
-                showMessage(data.msg,'error')
+                showMessage(data.msg,'alert')
             }
         })
         .catch((err) => console.log(`createClass.js Error: ${err}`))

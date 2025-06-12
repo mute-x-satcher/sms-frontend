@@ -154,7 +154,7 @@ form.addEventListener('submit', (e) => {
         }
         console.log(data)
   })
-  .catch((err) => console.log(`createAttendance Error: ${err}`))
+  .catch((err) => console.log(`updateAttendance Error: ${err}`))
 
 
 })

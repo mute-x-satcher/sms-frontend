@@ -48,7 +48,7 @@ form.addEventListener('submit', (event) => {
                showMessage(data.msg, 'success')
 
             } else {
-                showMessage(data.msg, 'error')
+                showMessage(data.msg, 'alert')
             }
         })
         .catch((err) => console.log(`classUpdatePage.js Error: ${err}`))

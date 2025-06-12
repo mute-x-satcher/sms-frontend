@@ -55,7 +55,11 @@ bunkForm.addEventListener('submit',(e)=>{
     .then(async (res) => {
         setLoading(false)
         const data = await res.json()
-        showMessage(data.msg,'success')
+       if (res.status === 500) {
+            showMessage(data.msg, 'alert');
+        } else {
+            showMessage(data.msg, 'success');
+        }
     })
     .catch((err) => console.log(`bunkStudent.js Error: ${err}`))
 
