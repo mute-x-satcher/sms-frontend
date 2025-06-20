@@ -1,5 +1,6 @@
-const LOCAL = 'http://localhost:3000'
+const LOCAL = 'http://192.168.1.2:3000'
 const BACKEND = 'https://sms-backend-hjfp.onrender.com'
+const PORT_FORWARDING = "http://106.213.84.8:3000"
 const BASE_URL = BACKEND
 
 export default BASE_URL
