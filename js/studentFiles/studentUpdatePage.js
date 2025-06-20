@@ -28,9 +28,11 @@ form.addEventListener('submit',(event) => {
     const secondaryContact = document.querySelector('#sec-contact').value
     const parentContacts = [primaryContact,secondaryContact]
     const studentData = JSON.parse(localStorage.getItem('currentStudent'))
+    const clasData = JSON.parse(localStorage.getItem('currentClass'))
     const studentId = studentData._id
+    const classId = clasData._id
 
-    const query = {studentName,rollNumber,parentContacts,studentId}
+    const query = {studentName,rollNumber,parentContacts,studentId,classId}
     const url = `${BASE_URL}/student/update`
 
     const updateStudent = fetch(url,{
@@ -49,7 +51,7 @@ form.addEventListener('submit',(event) => {
         if(studentInfo){
             showMessage(data.msg,'success')
         }else{
-            showMessage(data.msg,'error')
+            showMessage(data.msg,'alert')
         }
     })
     .catch((err) => console.log(`studentUpdatePage.js Error: ${err}`))
