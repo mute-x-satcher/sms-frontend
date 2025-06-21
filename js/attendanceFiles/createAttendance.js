@@ -90,8 +90,7 @@ form.addEventListener('submit', (e) => {
 
     if (selectedOption) {
       attendance.push({
-        studentName: student.studentName,
-        rollNumber: student.rollNumber,
+        studentId: student._id,
         status: selectedOption.value  // 'present' or 'absent'
       });
     }
@@ -120,7 +119,7 @@ form.addEventListener('submit', (e) => {
   .then(async (res) => {
         setLoading(false)
         const data = await res.json()
-        if(data.pdfURL){
+        if(data.attendanceReport){
           showMessage(data.msg,'success')
         }else{
           showMessage(data.msg,'alert')

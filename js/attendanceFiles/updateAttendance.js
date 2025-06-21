@@ -117,6 +117,7 @@ form.addEventListener('submit', (e) => {
       updatedAttendance.push({
         studentName: student.studentName,
         rollNumber: student.rollNumber,
+        studentId: student._id,
         status: selectedOption.value  // 'present' or 'absent'
       });
     }
@@ -141,12 +142,12 @@ form.addEventListener('submit', (e) => {
   .then(async (res) => {
         setLoading(false)
         const data = await res.json()
-        const {query , pdfURL} = data
-        if(pdfURL){
-          const updatedReport= JSON.parse(localStorage.getItem('currentAttendanceReport'));
-          updatedReport.reportName = query.reportName
-          updatedReport.reportType = query.reportType
-          updatedReport.attendance = query.attendance
+        const {updatedReport} = data
+        if(updatedReport){
+          const currentUpdatedReport= JSON.parse(localStorage.getItem('currentAttendanceReport'));
+          currentUpdatedReport.reportName = updatedReport.reportName
+          currentUpdatedReport.reportType = updatedReport.reportType
+          currentUpdatedReport.attendance = updatedReport.attendance
           localStorage.setItem('currentAttendanceReport',JSON.stringify(updatedReport))
           showMessage(data.msg,'success')
         }else{
