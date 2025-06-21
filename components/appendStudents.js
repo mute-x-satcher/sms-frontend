@@ -93,14 +93,19 @@ mainCard.appendChild(menuContainer)
 
 const nameDiv = document.createElement('div')
 const rollDiv = document.createElement('div')
+const absentDiv = document.createElement('div')
 const lable = document.createElement('div')
+
+
 
 nameDiv.textContent = `${student.studentName}`
 rollDiv.textContent = `Roll No: ${student.rollNumber}`
+absentDiv.textContent = `Absent Count: ${student.absentCount}`
 lable.textContent = 'Parent Contacts:'
 
 mainCard.appendChild(nameDiv)
 mainCard.appendChild(rollDiv)
+mainCard.appendChild(absentDiv)
 mainCard.appendChild(lable)
 
 student.parentContacts?.map((number,index)=>{

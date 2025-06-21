@@ -65,6 +65,6 @@ attendaceBtn.addEventListener('click',(event) => {
 })
 
 bunkBtn.addEventListener('click',(event) => {
-    window.location.href = '../studentPages/bunkStudentPage.html'
+    window.location.href = '../attendancePages/bunkStudentPage.html'
 })
 
