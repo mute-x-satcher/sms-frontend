@@ -56,6 +56,23 @@ allStudentsAttendance.forEach((student) => {
   presentLabel.appendChild(presentInput);
   presentLabel.appendChild(presentSpan);
 
+    // Leave label
+  const leaveLabel = document.createElement('label');
+  leaveLabel.className = 'leave-label'; // typo fixed: lable -> label
+
+  const leaveInput = document.createElement('input');
+  leaveInput.type = 'radio';
+  leaveInput.name = radioGroupName;
+  leaveInput.value = 'leave';
+  leaveInput.required = true;
+
+  const leaveSpan = document.createElement('span');
+  leaveSpan.textContent = 'Leave';
+
+  
+  leaveLabel.appendChild(leaveInput);
+  leaveLabel.appendChild(leaveSpan);
+
   // Absent label
   const absentLabel = document.createElement('label');
   absentLabel.className = 'absent-label'; // typo fixed: lable -> label
@@ -74,13 +91,17 @@ allStudentsAttendance.forEach((student) => {
 
   if(student.status == 'present'){
     presentInput.checked = true
-  }else{
+  } else if(student.status == 'leave'){
+    leaveInput.checked = true
+  }
+  else{
     absentInput.checked = true
   }
 
   // Append to options container
   attendanceOptions.appendChild(presentLabel);
   attendanceOptions.appendChild(absentLabel);
+  attendanceOptions.appendChild(leaveLabel)
 
   // Assemble student card
   studentCard.appendChild(studentInfo);
@@ -118,7 +139,7 @@ form.addEventListener('submit', (e) => {
         studentName: student.studentName,
         rollNumber: student.rollNumber,
         studentId: student._id,
-        status: selectedOption.value  // 'present' or 'absent'
+        status: selectedOption.value  // 'present' or 'absent' or 'leave'
       });
     }
   });

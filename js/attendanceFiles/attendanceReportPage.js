@@ -113,7 +113,10 @@ studetnsAttendace.map((student) => {
    
     if(student.status == 'present'){
         studentCard.classList.add('present-student')
-    }else{
+    }else if(student.status == 'leave'){
+        studentCard.classList.add('leave-student')
+    }
+    else{
         studentCard.classList.add('absent-student')
     }
 

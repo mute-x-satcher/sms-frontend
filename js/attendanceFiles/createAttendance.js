@@ -49,9 +49,29 @@ allStudents.forEach((student) => {
   presentLabel.appendChild(presentInput);
   presentLabel.appendChild(presentSpan);
 
+  
+  // Leave label
+  const leaveLabel = document.createElement('label');
+  leaveLabel.className = 'leave-label'; // typo fixed: lable -> label
+
+  const leaveInput = document.createElement('input');
+  leaveInput.type = 'radio';
+  leaveInput.name = radioGroupName;
+  leaveInput.value = 'leave';
+  leaveInput.required = true;
+
+  const leaveSpan = document.createElement('span');
+  leaveSpan.textContent = 'Leave';
+
+  
+  leaveLabel.appendChild(leaveInput);
+  leaveLabel.appendChild(leaveSpan);
+
   // Absent label
   const absentLabel = document.createElement('label');
-  absentLabel.className = 'absent-label'; // typo fixed: lable -> label
+  leaveLabel.className = 'absent-label'; // typo fixed: lable -> label
+
+
 
   const absentInput = document.createElement('input');
   absentInput.type = 'radio';
@@ -64,10 +84,11 @@ allStudents.forEach((student) => {
 
   absentLabel.appendChild(absentInput);
   absentLabel.appendChild(absentSpan);
-
+ 
   // Append to options container
   attendanceOptions.appendChild(presentLabel);
   attendanceOptions.appendChild(absentLabel);
+  attendanceOptions.appendChild(leaveLabel)
 
   // Assemble student card
   studentCard.appendChild(studentInfo);

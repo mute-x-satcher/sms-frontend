@@ -356,6 +356,10 @@ form {
   background-color: #c0392b;
 }
 
+.leave-student{
+  background-color: #d1c408;
+}
+
 .student-info {
   display: flex;
   align-items: flex-start;

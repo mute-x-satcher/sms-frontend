@@ -38,8 +38,9 @@ bunkForm.addEventListener('submit',(e)=>{
 
     const classData = JSON.parse(localStorage.getItem('currentClass'))
     const groupId = classData.groupId
+    const classId = classData._id
     const lectureName = lecture.value
-    const query = {bunkList,groupId,lectureName}
+    const query = {bunkList,groupId,classId,lectureName}
     const url = `${BASE_URL}/attendance/bunk`
     console.log(query)
     setLoading(true,'Submiting Bunk Report')
@@ -56,7 +57,7 @@ bunkForm.addEventListener('submit',(e)=>{
     .then(async (res) => {
         setLoading(false)
         const data = await res.json()
-       if (res.status === 500) {
+       if (res.status === 500 || res.status === 409) {
             showMessage(data.msg, 'alert');
         } else {
             showMessage(data.msg, 'success');
