@@ -73,7 +73,7 @@ menuDropDown.className = 'menu-dropdown hidden'
     })
 
     menuDropDown.appendChild(updateBtn)
-    menuDropDown.appendChild(pdfBtn)
+    // menuDropDown.appendChild(pdfBtn)
     menuDropDown.appendChild(deleteBtn)
 
     
