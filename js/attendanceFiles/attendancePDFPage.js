@@ -34,6 +34,7 @@ fetch(`${BASE_URL}/attendance/pdf`, {
      a.download = 'AttendanceReport.pdf';
      a.click();
      URL.revokeObjectURL(url);
+     window.open(url, '_blank');
   })
   .catch((err) => console.log(`attendancePDFPage Error: ${err}`))
 
