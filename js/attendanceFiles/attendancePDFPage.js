@@ -30,6 +30,10 @@ fetch(`${BASE_URL}/attendance/pdf`, {
     setLoading(false)
     const url = URL.createObjectURL(blob);
     pdfFrame.src = url;
+     a.href = url;
+     a.download = 'AttendanceReport.pdf';
+     a.click();
+     URL.revokeObjectURL(url);
   })
   .catch((err) => console.log(`attendancePDFPage Error: ${err}`))
 
