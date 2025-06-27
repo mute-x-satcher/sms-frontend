@@ -29,11 +29,11 @@ fetch(`${BASE_URL}/attendance/pdf`, {
   .then(blob => {
     setLoading(false)
     const url = URL.createObjectURL(blob);
-    pdfFrame.src = url;
-     a.href = url;
-     a.download = 'AttendanceReport.pdf';
-     a.click();
-     URL.revokeObjectURL(url);
+    // pdfFrame.src = url;
+    //  a.href = url;
+    //  a.download = 'AttendanceReport.pdf';
+    //  a.click();
+    //  URL.revokeObjectURL(url);
      window.open(url, '_blank');
   })
   .catch((err) => console.log(`attendancePDFPage Error: ${err}`))
