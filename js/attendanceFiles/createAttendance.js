@@ -112,7 +112,7 @@ form.addEventListener('submit', (e) => {
     if (selectedOption) {
       attendance.push({
         studentId: student._id,
-        status: selectedOption.value  // 'present' or 'absent'
+        status: selectedOption.value  // 'present' or 'absent' or 'leave'
       });
     }
   });

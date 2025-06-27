@@ -22,6 +22,7 @@ function fetchStudents(){
     .then(async (res) => {
         const data = await res.json()
         const {allStudentInfo} = data
+        allStudentInfo.sort((a, b) => Number(a.rollNumber) - Number(b.rollNumber))
         console.log(allStudentInfo)
         localStorage.setItem('currentStudentsArray',JSON.stringify(allStudentInfo))
     } )

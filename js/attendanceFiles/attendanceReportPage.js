@@ -6,6 +6,7 @@ import reloadOnce from "../../components/reloadOnce.js";
 
 reloadOnce()
 
+const reportData = JSON.parse(localStorage.getItem('currentAttendanceReport'))
 
 const studentHolder = document.querySelector('#studentHolder') 
 const dateBar = document.querySelector('#date')
@@ -13,9 +14,11 @@ const backBtn = document.querySelector('button')
 const settingIcon = document.querySelector('#setting-icon')
 const updateBtn = document.createElement('button')
 const deleteBtn = document.createElement('button')
+const pdfBtn = document.createElement('button')
 const searchInput = document.querySelector('#searchInput')
 
 updateBtn.innerText = 'Update'
+pdfBtn.innerText = 'PDF'
 deleteBtn.innerText = 'Delete'
 
 const menuContainer = document.createElement('span')
@@ -33,6 +36,10 @@ menuDropDown.className = 'menu-dropdown hidden'
     updateBtn.addEventListener('click',(e) => {
         window.location.href = 'attendanceUpdatePage.html'
         })
+    pdfBtn.addEventListener('click',(e) => {
+        // localStorage.setItem('currentPDF',reportData.pdfURL)
+        window.location.href = 'attendancePDFPage.html'
+    })    
 
         deleteBtn.addEventListener('click',(e) => {
         const deleteFunc = () => {
@@ -66,6 +73,7 @@ menuDropDown.className = 'menu-dropdown hidden'
     })
 
     menuDropDown.appendChild(updateBtn)
+    menuDropDown.appendChild(pdfBtn)
     menuDropDown.appendChild(deleteBtn)
 
     
@@ -74,7 +82,7 @@ backBtn.addEventListener('click',(e) => {
     window.location.href = 'attendancePage.html'
 })
 
-const reportData = JSON.parse(localStorage.getItem('currentAttendanceReport'))
+
 const studetnsAttendace = reportData.attendance
 const pdfURL = reportData.pdfURL
 const date = reportData.reportDate

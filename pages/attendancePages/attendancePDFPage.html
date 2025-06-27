@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Classmark - PDF Viewer</title>
+  <link rel="stylesheet" href="../../css/attendancePDFPage.css" />
+</head>
+<body>
+ 
+  <nav>
+    <button class="back-btn" onclick="window.history.back()">
+      <img src="../../assets/blue-back.png" alt="">
+    </button>
+    <div>Classmark PDF Viewer</div>
+  </nav>
+  <embed id="pdfFrame" type="application/pdf" width="100%" height="600px" />
+</body>
+<script type="module" src="../../js/attendanceFiles/attendancePDFPage.js"></script>
+</html>
