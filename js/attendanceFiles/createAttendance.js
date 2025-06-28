@@ -112,6 +112,8 @@ form.addEventListener('submit', (e) => {
     if (selectedOption) {
       attendance.push({
         studentId: student._id,
+        studentName: student.studentName,
+        rollNumber: student.rollNumber,
         status: selectedOption.value  // 'present' or 'absent' or 'leave'
       });
     }
@@ -140,7 +142,7 @@ form.addEventListener('submit', (e) => {
   .then(async (res) => {
         setLoading(false)
         const data = await res.json()
-        if(data.attendanceReport){
+        if(res.status == 200){
           showMessage(data.msg,'success')
         }else{
           showMessage(data.msg,'alert')
