@@ -48,7 +48,15 @@ updateBtn.addEventListener('click',(event) => {
     window.location.href = 'studentUpdatePage.html'
 })
 
-
+const analyticsBtn = document.createElement('button')
+analyticsBtn.textContent = 'Analytics'
+analyticsBtn.id = student.rollNumber
+analyticsBtn.addEventListener('click',(event) => {
+    const studentId = event.target.id
+    const currentStudent = allStudents.find((student) => student.rollNumber == studentId)
+    localStorage.setItem('currentStudent', JSON.stringify(currentStudent))
+    window.location.href = 'studentAnalytics.html'
+})
 const deleteBtn = document.createElement('button')
 deleteBtn.textContent = 'Delete'
 deleteBtn.id = student._id
@@ -83,7 +91,9 @@ deleteAsk(deleteFunc,'student')
 })
 
 menuDropDown.appendChild(updateBtn)
+menuDropDown.appendChild(analyticsBtn)
 menuDropDown.appendChild(deleteBtn)
+
 
 
 menuContainer.appendChild(menuButton)

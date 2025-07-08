@@ -180,9 +180,10 @@ nav h1 {
 .back-btn {
   background-color: var(--primary-blue);
   color: var(--primary-blue);
-  border: 2px solid var(--white);
+  border: 2px solid var(--primary-blue);
   padding: 0.1rem 0.2rem;
   font-weight: 600;
+  left: 0px;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;

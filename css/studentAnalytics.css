@@ -1,0 +1,162 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f9ff;
+  color: #003c9e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: white;
+  color: #0057d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 3px solid #0057d8;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.back-btn {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: #0057d8;
+  border: 2px solid #ffffff;
+  padding: 0.1rem 0.2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.back-btn:hover {
+  background-color: #e0e7ff;
+}
+
+/* === Card Container === */
+.card-container {
+  margin-top: 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center each card */
+  gap: 1.5rem;            /* space between cards */
+  padding: 0 1rem 2rem;
+}
+
+/* === Analytics Card === */
+.analytics-card {
+  background-color: #ffffff;
+  border: 2px solid #003c9e;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 60, 158, 0.1);
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+}
+
+/* Month Label Top-Right */
+.analytics-card h1 {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #002766;
+}
+
+/* === Cell Box === */
+.cell-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+  gap: 0px;
+  margin-top: 4rem;
+}
+
+/* === Date Cell === */
+.cell-box .cell {
+  width: 30px;
+  height: 30px;
+  aspect-ratio: 1 / 1;
+  background-color: #dbe9ff;
+  color: #003c9e;
+  border: 1px solid black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.5rem;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
+
+.cell-box .cell:hover {
+  transform: scale(1.05);
+}
+
+/* === Custom Color Classes (for later use) === */
+.cell.present {
+  background-color: #0ec93a;
+  color: #ffffff;
+}
+
+.cell.absent {
+  background-color: #ff0015;
+  color: #ffffff;
+}
+
+.cell.leave {
+  background-color: #cfaa2f;
+  color: #ffffff;
+}
+
+.cell.unmarked {
+  background-color: #0057d8;
+  color: #ffffff;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .analytics-card {
+    padding: 1rem;
+  }
+
+  .analytics-card h1 {
+    font-size: 1.1rem;
+  }
+
+  .cell-box {
+    gap: 8px;
+  }
+
+  .cell-box .cell {
+    font-size: 0.8rem;
+  }
+}

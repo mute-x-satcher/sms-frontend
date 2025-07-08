@@ -1,4 +1,4 @@
-/* Reset & base */
+/* === Reset & base === */
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +12,14 @@ body {
   min-height: 100vh;
 }
 
-
-/* Full-page overlay */
+/* === Full-page overlay === */
 .loading-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* dark transparent background */
+  background-color: rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,10 +27,9 @@ body {
   z-index: 9999;
 }
 
-/* Spinner */
 .loading-spinner {
-  border: 6px solid #e0e0e0; /* light gray */
-  border-top: 6px solid #007bff; /* blue */
+  border: 6px solid #e0e0e0;
+  border-top: 6px solid #007bff;
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -39,13 +37,11 @@ body {
   margin-bottom: 20px;
 }
 
-/* Spinner Animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
-/* Message Text */
 .loading-message {
   color: white;
   font-weight: 600;
@@ -54,7 +50,6 @@ body {
   padding: 0 20px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
   .loading-spinner {
     width: 40px;
@@ -67,47 +62,49 @@ body {
   }
 }
 
-
-
 /* === Navbar === */
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
   background-color: white;
-  padding: 1rem 2rem;
-  border-bottom: 2px solid #0057d8;
-  flex-wrap: wrap;
-  position: relative;
-}
-
-/* Title centered in flex */
-nav h1 {
- position: absolute;
-left: 50%;
-transform: translateX(-50%);
-}
-
-/* Back button */
-.back-btn {
-  font-size: 1rem;
   color: #0057d8;
-  background: transparent;
-  border: 1px solid #0057d8;
-  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  border-bottom: 3px solid #0057d8;
+  z-index: 1000;
+}
+
+nav h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.back-btn {
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: #0057d8;
+  border: 2px solid #ffffff;
   padding: 0.1rem 0.2rem;
+  border-radius: 6px;
+  font-weight: 700;
   cursor: pointer;
-  transition: 0.2s ease;
-  text-decoration: none;
-  white-space: nowrap;
+  transition: background-color 0.3s ease;
 }
 
 .back-btn:hover {
-  background-color: #ffffff;
-  color: white;
+  background-color: #e0e7ff;
 }
 
-/* Buttons container on right */
 .nav-buttons {
   display: flex;
   gap: 1rem;
@@ -136,7 +133,6 @@ transform: translateX(-50%);
   color: white;
 }
 
-/* === Responsive Navbar === */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -167,11 +163,29 @@ transform: translateX(-50%);
   }
 }
 
-/* Create Student Button */
+/* === Create Attendance Button === */
 .top-controls {
   display: flex;
   justify-content: flex-end;
   padding: 1rem 0.5rem;
+  margin-top: 70px; /* Added to prevent overlap with fixed nav */
+}
+.left-controls{
+  display: flex;
+  justify-content: start;
+  margin-left: 25px;
+  align-items: center;
+ 
+}
+
+.left-controls select{
+  width: 35%;
+  padding: 0.4rem;
+  margin: 0.2rem 0;
+  border: 2px solid #0057d8;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
 }
 
 #createAttendance {
@@ -189,34 +203,15 @@ transform: translateX(-50%);
   background-color: #004bbf;
 }
 
-
-/* Student Cards Container */
-.attendance-container {
+/* === Student & Class Attendance Cards === */
+.attendance-container,
+.cattendance-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   margin-top: 2rem;
   padding: 0 0.5rem;
-}
-
-
-/* Class Cards Container */
-.cattendance-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-/* Individual class card style */
-.cattendance-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding: 0 0rem; /* Adds small padding on left/right */
 }
 
 .attendance-card {
@@ -231,11 +226,11 @@ transform: translateX(-50%);
   transition: transform 0.2s ease;
 }
 
-.exam-attendance-card{
+.exam-attendance-card {
   width: 95%;
   border: 2px solid #003c9e;
   border-radius: 10px;
-  background-color: #0057d8 ;
+  background-color: #0057d8;
   color: #ffffff;
   font-weight: 500;
   padding: 1rem 1.5rem;
@@ -247,8 +242,6 @@ transform: translateX(-50%);
   transform: translateY(-2px);
 }
 
-
-/* Minimal Mobile Tweaks */
 @media (max-width: 768px) {
   nav {
     flex-direction: row;
@@ -265,12 +258,13 @@ transform: translateX(-50%);
   }
 }
 
-w-btn{
+/* === Utility Button Classes === */
+w-btn {
   background-color: #f0f6ff;
   padding: 0.1rem 0.2rem;
 }
 
-b-btn{
+b-btn {
   background-color: #0057d8;
   padding: 0.1rem 0.2rem;
 }

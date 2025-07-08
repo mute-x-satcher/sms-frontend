@@ -213,6 +213,13 @@ nav {
   z-index: 1000;
 }
 
+nav h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+}
+
 #date{
   color: #0057d8;
   display: flex;
@@ -291,12 +298,12 @@ nav {
 /* Back button inside nav */
 .back-btn {
   position: absolute;
-  left: 15px;
+  left: 0px;
   top: 50%;
   transform: translateY(-50%);
   background-color: white;
   color: #0057d8;
-  border: 2px solid #0057d8;
+  border: 2px solid #ffffff;
   padding: 0.1rem 0.2rem;
   border-radius: 6px;
   font-weight: 700;
