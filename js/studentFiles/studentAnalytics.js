@@ -11,7 +11,8 @@ const studentId = studentData._id
 
 // const base_url = BASE_URL
 const base_url_raw = 'http://localhost:3000/'
-const url = `${base_url_raw}attendance/analytics`
+const base_backend = 'https://sms-backend-13ff.onrender.com/'
+const url = `${base_backend}attendance/analytics`
 
 const query = {classId: classId,studentId}
 const fechAnalytics = fetch(url,{
