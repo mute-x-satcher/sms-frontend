@@ -13,6 +13,20 @@ const studentId = studentData._id
 const base_url_raw = 'http://localhost:3000/'
 const url = `${base_url_raw}attendance/analytics`
 
+const studentDeatil = document.createElement('div')
+const studentName = document.createElement('div')
+const studentRoll = document.createElement('div')
+
+studentDeatil.className = 'student-detail-card'
+
+studentName.textContent = `${studentData.studentName}`
+studentRoll.textContent = `Roll No: ${studentData.rollNumber}`
+
+studentDeatil.appendChild(studentName)
+studentDeatil.appendChild(studentRoll)
+cardContainer.appendChild(studentDeatil)
+
+
 const query = {classId: classId,studentId}
 const fechAnalytics = fetch(url,{
     method: 'POST',

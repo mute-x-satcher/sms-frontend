@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+#space-div{
+  width: 100%;
+  height: 15px;
+  background-color: #004bbf;
+  
+}
+
+
 @media screen and (orientation: landscape) {
   body::before {
     content: "Please rotate your device to portrait mode.";

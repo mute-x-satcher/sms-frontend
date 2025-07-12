@@ -99,7 +99,7 @@ allStudents.forEach((student) => {
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-    setLoading(true,'Creating Attendance')
+    setLoading(true,'Generating Attendance Report')
     const reportName = document.querySelector('#reportName').value
     const reportType = document.querySelector('#reportType').value
 

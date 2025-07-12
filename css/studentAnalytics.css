@@ -81,6 +81,20 @@ nav h1 {
   position: relative;
 }
 
+.student-detail-card{
+  background-color: #0057d8;
+  color: #dbe9ff;
+   font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid #003c9e;
+  border-radius: 10px;
+  padding: 0.8rem;
+  /* box-shadow: 0 2px 6px rgba(0, 60, 158, 0.1); */
+  width: 100%;
+  max-width: 600px;
+ 
+}
+
 /* Month Label Top-Right */
 .analytics-card h1 {
   position: absolute;
