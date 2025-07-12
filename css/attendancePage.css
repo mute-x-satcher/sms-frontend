@@ -12,6 +12,13 @@ body {
   min-height: 100vh;
 }
 
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
 /* === Full-page overlay === */
 .loading-overlay {
   position: fixed;

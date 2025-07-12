@@ -105,6 +105,16 @@ nav h1 {
   color: #002766;
 }
 
+
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
+
+
 /* === Cell Box === */
 .cell-box {
   display: grid;

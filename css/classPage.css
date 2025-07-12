@@ -111,6 +111,14 @@ main {
   100% { transform: rotate(360deg); }
 }
 
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
+
 /* Message Text */
 .loading-message {
   color: white;

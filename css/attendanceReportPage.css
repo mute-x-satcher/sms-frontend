@@ -285,6 +285,14 @@ nav h1 {
 }
 
 
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
+
 .act-btn{
   padding: 5px;
   margin: 5px;

@@ -149,6 +149,16 @@ nav h1 {
   transform: translateX(-50%);
 }
 
+
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
+
+
 .back-btn {
   position: absolute;
   left: 0px;

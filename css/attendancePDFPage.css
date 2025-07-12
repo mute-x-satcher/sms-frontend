@@ -94,6 +94,13 @@
   margin-bottom: 20px;
 }
 
+#space-div{
+  width: 100%;
+  height: 15px;
+  /* background-color: #004bbf; */
+  
+}
+
 /* Spinner Animation */
 @keyframes spin {
   0% { transform: rotate(0deg); }
