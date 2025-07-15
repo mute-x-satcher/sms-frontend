@@ -27,7 +27,7 @@ nav {
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
-  padding-top: 15px;
+  padding-top: 30px;
   border-bottom: 3px solid #0057d8;
   z-index: 1000;
   flex-wrap: wrap;
@@ -48,7 +48,7 @@ nav h1 {
   color: #0057d8;
   border: 2px solid #ffffff;
   padding: 0.1rem 0.2rem;
-  padding-top: 15px;
+  padding-top: 30px;
   border-radius: 6px;
   font-weight: 700;
   cursor: pointer;

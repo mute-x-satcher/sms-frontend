@@ -209,7 +209,7 @@ nav {
   justify-content: center;
   font-weight: 600;
   font-size: 1rem;
-  padding-top: 15px;
+  padding-top: 30px;
   border-bottom: 3px solid #0057d8;
   z-index: 1000;
 }
@@ -317,7 +317,7 @@ nav h1 {
   padding: 0.1rem 0.2rem;
   border-radius: 6px;
   font-weight: 700;
-  padding-top: 15px;
+  padding-top: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }

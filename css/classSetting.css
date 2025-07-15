@@ -184,7 +184,7 @@ nav {
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  padding-top: 15px;
+  padding-top: 30px;
   font-size: 1rem;
   border-bottom: 3px solid #0057d8;
   z-index: 1000;
@@ -201,7 +201,7 @@ nav {
   color: #0057d8;
   border: 2px solid #ffffff;
   padding: 0.1rem 0.2rem;
-  padding-top: 15px;
+  padding-top: 30px;
   border-radius: 6px;
   font-weight: 700;
   cursor: pointer;
