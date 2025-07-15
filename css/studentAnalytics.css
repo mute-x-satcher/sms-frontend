@@ -19,20 +19,18 @@ nav {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
-  background-color: white;
+  height: 80px; /* Increased height */
+  background-color: rgb(255, 255, 255);
   color: #0057d8;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Align to bottom */
   justify-content: center;
-  font-weight: 600;
-  font-size: 1rem;
-  padding-top: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
   border-bottom: 3px solid #0057d8;
   z-index: 1000;
-  flex-wrap: wrap;
+  padding-bottom: 10px; /* Optional: adds space from bottom */
 }
-
 nav h1 {
   position: absolute;
   left: 50%;
@@ -86,7 +84,8 @@ nav h1 {
 .student-detail-card{
   background-color: #0057d8;
   color: #dbe9ff;
-   font-weight: 600;
+  font-weight: 600;
+  margin-top: 10px;
   font-size: 1.1rem;
   border: 2px solid #003c9e;
   border-radius: 10px;

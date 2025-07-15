@@ -16,7 +16,9 @@ nav {
   padding: 5px 20px;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   padding-top: 30px;
+  height: 80px;
   align-items: center;
 }
 
