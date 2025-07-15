@@ -11,7 +11,8 @@ const studentId = studentData._id
 
 // const base_url = BASE_URL
 const base_url_raw = 'http://localhost:3000/'
-const url = `${base_url_raw}attendance/analytics`
+const base_url_remote = 'https://sms-backend-13ff.onrender.com/'
+const url = `${base_url_remote}attendance/analytics`
 
 const studentDeatil = document.createElement('div')
 const studentName = document.createElement('div')

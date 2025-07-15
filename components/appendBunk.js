@@ -16,7 +16,7 @@ const appendBunk = (allStudents) => {
 
         studentName.textContent = `${student.studentName}`
         studentRollNumber.textContent = `Roll No: ${student.rollNumber}`
-        bunkBtn.textContent = 'Add to BunkList'
+        bunkBtn.textContent = 'Add to list'
 
         bunkBtn.id = student.rollNumber
         bunkBtn.className = 'bunk-false'
@@ -27,10 +27,10 @@ const appendBunk = (allStudents) => {
             const bunkBtn = e.target
             if(bunkBtn.className == 'bunk-true'){
                 bunkBtn.className = 'bunk-false' 
-                bunkBtn.textContent = 'Add to Bunklist'           
+                bunkBtn.textContent = 'Add to list'           
             }else{
                 bunkBtn.className = 'bunk-true'
-                bunkBtn.textContent = 'Remove from Bunklist'
+                bunkBtn.textContent = 'Remove from list'
             }
             
         })

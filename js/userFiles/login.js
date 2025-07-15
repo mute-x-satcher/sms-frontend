@@ -2,7 +2,6 @@ import showMessage from "../../components/showMessage.js"
 import setLoading from "../../components/setLoading.js"
 import BASE_URL from "../../url/base_url.js"
 
-
 const token = localStorage.getItem('authToken')
 console.log(token)
 if (token) {

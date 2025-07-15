@@ -4,9 +4,17 @@ import BASE_URL from "../../url/base_url.js"
 import reloadOnce from "../../components/reloadOnce.js";
 
 reloadOnce()
-
+const currentDate = new Date();
+const options = { month: 'short' };
+const currentMonthAbbreviation = currentDate.toLocaleString('en-US', options);
+localStorage.setItem('currentMonth',currentMonthAbbreviation)
 const createAttendanceBtn = document.querySelector('#createAttendance')
 const backBtn = document.querySelector('button')
+const attendanceMonth = document.querySelector('#attendanceMonth')
+
+// const currentMonth = localStorage.getItem('currentMonth')
+attendanceMonth.value = currentMonthAbbreviation
+
 
 backBtn.addEventListener('click',(e) =>{
     window.location.href = '../classPages/classPage.html'
@@ -24,9 +32,10 @@ function fetchAttendanceReport(){
     const classData = JSON.parse(localStorage.getItem('currentClass'))
     console.log(classData)
     const classId = classData._id
+    const reportMonth = attendanceMonth.value
 
     const url = `${BASE_URL}/attendance/get`
-    const query = {classId}
+    const query = {classId,reportMonth}
     console.log(query)
     const getAttendanceReports = fetch(url,{
     method: 'POST',
@@ -48,3 +57,7 @@ getAttendanceReports
 }
 
 fetchAttendanceReport()
+
+attendanceMonth.addEventListener('change',(e) => {
+    fetchAttendanceReport()
+})
