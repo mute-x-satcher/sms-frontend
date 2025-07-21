@@ -53,9 +53,9 @@ settingBtn.addEventListener('click',(event)=>{
     window.location.href = 'classSetting.html'
 })
 
-homeBtn.addEventListener('click',(event)=>{
-    window.location.href = '../homePage.html'
-})
+// homeBtn.addEventListener('click',(event)=>{
+//     window.location.href = '../homePage.html'
+// })
 
 studentsBtn.addEventListener('click',(event) =>{
     window.location.href = '../studentPages/studentPage.html'

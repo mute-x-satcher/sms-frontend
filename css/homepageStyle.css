@@ -135,11 +135,11 @@ nav h1 {
   border: 1px solid transparent;
 }
 
-.nav-buttons a:hover,
+/* .nav-buttons a:hover,
 .nav-buttons span:hover {
   background-color: #0057d8;
   color: white;
-}
+} */
 
 /* === Responsive Nav === */
 @media (max-width: 600px) {

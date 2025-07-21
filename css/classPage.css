@@ -11,16 +11,19 @@
 
 /* Navbar */
 nav {
-  background-color: #0057d8;
-  color: white;
+  background-color: rgb(255, 255, 255);
+  color: #0057d8;
+  border-bottom: 2px solid #0057d8;
+  width: 100%;
   padding: 5px 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding-top: 30px;
-  height: 80px;
+  /* padding-top: 30px; */
+  height: 60px;
   align-items: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  /* box-shadow: 20px 22px 60px rgba(0, 0, 0, 0.15); */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* Class Name */
@@ -31,7 +34,7 @@ nav h1 {
   overflow: hidden;
   position: relative;
   white-space: nowrap;
-  color: #ffffff;
+  color: #0057d8;
 }
 
 nav h1 span {
@@ -189,4 +192,67 @@ b-btn {
   color: white;
   padding: 0.1rem 0.2rem;
   border-radius: 4px;
+}
+
+/* Button Grid Layout */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Updated Square Button Style */
+.large-btn {
+  aspect-ratio: 1 / 1; /* Makes each button square */
+  background-color: white;
+  border: 2px solid #0057d8;
+  border-radius: 12px;
+  font-size: 18px;
+  color: #0057d8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 87, 216, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  padding: 10px;
+  text-align: center;
+}
+
+.large-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0, 87, 216, 0.15);
+}
+
+/* Text inside the button */
+.large-btn h1 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* Icon inside the button */
+.large-btn img {
+  width: 40%;
+  height: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .button-grid {
+    gap: 12px;
+  }
+
+  .large-btn h1 {
+    font-size: 1rem;
+  }
+
+  .large-btn img {
+    width: 50%;
+  }
 }
