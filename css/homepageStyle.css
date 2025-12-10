@@ -12,7 +12,8 @@
 }
 
 /* === Landscape warning === */
-@media screen and (orientation: landscape) {
+
+/* @media screen and (orientation: landscape) {
   body::before {
     content: "Please rotate your device to portrait mode.";
     position: fixed;
@@ -34,7 +35,7 @@
   * {
     visibility: hidden;
   }
-}
+} */
 
 body {
   font-family: 'Segoe UI', sans-serif;

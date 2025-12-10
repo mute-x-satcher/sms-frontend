@@ -177,20 +177,18 @@ nav {
 /* Back button inside nav */
 .back-btn {
   position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 10px;
+  bottom: 5px;
   background-color: white;
   color: #0057d8;
-  border: 2px solid #ffffff;
-  padding: 0.1rem 0.2rem;
-  padding-top: 30px;
+  border: none;
+  padding: 4px 10px;
   border-radius: 6px;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
-
 
 .back-btn:hover {
   background-color: #e0e7ff;
@@ -346,5 +344,32 @@ form button {
   .attendance-options {
     margin-top: 10px;
     justify-content: flex-start;
+  }
+}
+/* Keep the button on the LEFT on PC screens */
+@media (min-width: 768px) {
+  .bunk-student-card {
+    display: flex;
+    justify-content: flex-start; /* items start from left */
+    align-items: center;
+    gap: 20px; /* space between button and info */
+  }
+
+  .bunk-btn-div {
+    width: auto;        /* remove 80vw */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-start; /* button stays left */
+  }
+
+  .student-info {
+    flex: 1;
+    min-width: 0;       /* prevents overflow */
+  }
+
+  .bunk-false,
+  .bunk-true {
+    padding: 10px 16px;
+    white-space: nowrap;
   }
 }

@@ -47,6 +47,7 @@ const settingBtn = document.getElementById('classSetting')
 const homeBtn = document.getElementById('home')
 const studentsBtn = document.getElementById('students')
 const attendaceBtn = document.getElementById('attendance')
+const analyticsBtn = document.getElementById('analytics')
 const bunkBtn = document.getElementById('bunk-report')
 
 settingBtn.addEventListener('click',(event)=>{
@@ -61,11 +62,15 @@ studentsBtn.addEventListener('click',(event) =>{
     window.location.href = '../studentPages/studentPage.html'
 })
 
+analyticsBtn.addEventListener('click',(event) =>{
+    window.location.href = '../studentPages/studentPage.html'
+})
+
 attendaceBtn.addEventListener('click',(event) => {
     window.location.href = '../attendancePages/attendancePage.html'
 })
 
 bunkBtn.addEventListener('click',(event) => {
-    window.location.href = '../attendancePages/bunkStudentPage.html'
+    // window.location.href = '../attendancePages/bunkStudentPage.html'
 })
 

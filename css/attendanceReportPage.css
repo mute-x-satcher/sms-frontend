@@ -308,18 +308,17 @@ nav h1 {
 /* Back button inside nav */
 .back-btn {
   position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 10px;
+  bottom: 5px;
   background-color: white;
   color: #0057d8;
-  border: 2px solid #ffffff;
-  padding: 0.1rem 0.2rem;
+  border: none;
+  padding: 4px 10px;
   border-radius: 6px;
   font-weight: 700;
-  padding-top: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
 
 .back-btn:hover {
@@ -485,4 +484,54 @@ w-btn{
 b-btn{
   background-color: #0057d8;
   padding: 0.1rem 0.2rem;
+}
+/* ===== PC MODE FOR STUDENT CARDS (Same style as analytic cards) ===== */
+@media (min-width: 900px) {
+
+  #studentHolder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .student-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-radius: 14px;
+    background-color: white !important; /* card background like analytics */
+    border: 2px solid #0057d8;
+    box-shadow: 0 4px 10px rgba(0, 87, 216, 0.15);
+    color: #003580;
+  }
+
+  .present-student {
+    border-left: 10px solid #27ae60;
+  }
+
+  .absent-student {
+    border-left: 10px solid #c0392b;
+  }
+
+  .leave-student {
+    border-left: 10px solid #d1c408;
+  }
+
+  .student-info {
+    color: #003580;
+    font-size: 1.1rem;
+    min-width: auto;
+  }
+
+  .attendance-options {
+    gap: 25px;
+    justify-content: flex-end;
+  }
+
+  .attendance-options input[type="radio"] {
+    width: 22px;
+    height: 22px;
+  }
 }

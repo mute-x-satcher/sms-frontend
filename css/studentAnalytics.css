@@ -36,22 +36,21 @@ nav h1 {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .back-btn {
   position: absolute;
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
+  left: 10px;
+  bottom: 5px;
   background-color: white;
   color: #0057d8;
-  border: 2px solid #ffffff;
-  padding: 0.1rem 0.2rem;
-  padding-top: 30px;
+  border: none;
+  padding: 4px 10px;
   border-radius: 6px;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-size: 0.9rem;
 }
+
 
 
 .back-btn:hover {
@@ -184,5 +183,63 @@ nav h1 {
 
   .cell-box .cell {
     font-size: 0.8rem;
+  }
+}
+
+
+/* === PC / Landscape Redesign (Does NOT touch existing logic) === */
+@media (orientation: landscape) and (min-width: 900px) {
+
+  body {
+    padding-top: 80px;
+    background-color: #f0f6ff;
+  }
+
+  nav {
+    height: 80px;
+    font-size: 1.6rem;
+    padding-bottom: 15px;
+  }
+
+  .back-btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* Main content wider & centered */
+  .card-container {
+    max-width: 1200px;
+    margin-top: 7rem;
+    padding: 0 2rem 3rem;
+  }
+
+  .analytics-card, .student-detail-card {
+    max-width: 1000px;
+    padding: 2rem;
+    border-width: 3px;
+    border-radius: 14px;
+    font-size: 1.2rem;
+  }
+
+  .analytics-card h1 {
+    font-size: 1.6rem;
+    right: 2rem;
+    top: 1.2rem;
+  }
+
+  /* Bigger attendance grid for PC */
+  .cell-box {
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    gap: 6px;
+    margin-top: 3rem;
+  }
+
+  .cell-box .cell {
+    width: 45px;
+    height: 45px;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
 }
