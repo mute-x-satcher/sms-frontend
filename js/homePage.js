@@ -34,6 +34,10 @@ getClass
     const {allClassInfo} = data
     localStorage.setItem('AllClasses',JSON.stringify(allClassInfo))
     appendClass(allClassInfo)   
+    if(localStorage.getItem('firstVisitor') == 'true' || localStorage.getItem('firstVisitor') == null || localStorage.getItem('firstVisitor') == '' ){
+        localStorage.setItem('firstVisitor','true')
+        window.location.href = 'aboutPage.html'
+    }
 })
 .catch((err) => console.log('homePage.js Error',err))
 
@@ -87,7 +91,8 @@ createBtn.addEventListener('click',(event)=>{
 })
 
 aboutBtn.addEventListener('click',(e) => {
-    window.location.href = 'aboutPage.html'
+    window.location.href = './aboutPage.html'
 })
+
 
 
