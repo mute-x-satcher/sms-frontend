@@ -15,7 +15,6 @@ window.onload = function () {
 
 
 function fetchClasses(){
-setLoading(true,'Loading Classes')
 const accountId = localStorage.getItem('accountId')
 const url = `${BASE_URL}/class/get`
 const getClass = fetch(url,{
@@ -40,6 +39,7 @@ getClass
     }
 })
 .catch((err) => console.log('homePage.js Error',err))
+setLoading(true,'Loading Classes')
 
 }
 
