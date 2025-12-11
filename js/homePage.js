@@ -45,6 +45,7 @@ fetchClasses()
 
 const createBtn = document.querySelector('#createClass')
 const settingIcon = document.querySelector('#setting-icon')
+const aboutBtn = document.querySelector('#about')
 const logoutBtn = document.createElement('button')
 logoutBtn.innerText = 'Logout'
 
@@ -83,6 +84,10 @@ document.addEventListener('click',()=>{
 
 createBtn.addEventListener('click',(event)=>{
     window.location.href = './classPages/createClass.html'
+})
+
+aboutBtn.addEventListener('click',(e) => {
+    window.location.href = 'aboutPage.html'
 })
 
 

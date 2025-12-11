@@ -17,7 +17,12 @@ const setLoading = (isLoading, message) => {
 
     loadingOverlay.appendChild(loadingSpinner);
     loadingOverlay.appendChild(loadingMessage);
-
+    setTimeout(()=>{
+      const msg = 'This webapp is hosted on free server, it may take while'
+      // loadingOverlay.appendChild(msg);
+      loadingMessage.textContent = msg
+      console.log('opps')
+    },8000)
     document.body.appendChild(loadingOverlay);
   } else {
     if (existingOverlay) existingOverlay.remove();

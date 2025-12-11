@@ -307,3 +307,16 @@ b-btn {
 .hidden {
   display: none;
 }
+
+#about {
+  padding: 4px 10px;
+  font-size: 1rem;
+  background: white;
+  color: #0057d8;
+  border: 5px #0057d8;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 87, 216, 0.3);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
